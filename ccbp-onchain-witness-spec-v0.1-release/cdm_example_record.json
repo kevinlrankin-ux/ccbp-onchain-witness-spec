@@ -1,0 +1,48 @@
+{
+  "cdm_v": "0.1",
+  "record_type": "decision",
+  "record_id": "example-decision-001",
+  "time_utc": "2026-01-13T20:00:00Z",
+  "entity": {
+    "entity_id": "example-entity",
+    "market_domain_code": "example.domain"
+  },
+  "project": {
+    "project_id": "project-alpha",
+    "partition_id": "pp-alpha"
+  },
+  "decision": {
+    "title": "Persist rollups only for humidity sensors",
+    "summary": "Store 15-min rollups and threshold exceptions; do not persist raw 1Hz telemetry.",
+    "decision_class": "operational",
+    "confidence": "high",
+    "alternatives_considered": [
+      "Persist raw telemetry for 30 days",
+      "Persist raw telemetry indefinitely"
+    ]
+  },
+  "context_refs": {
+    "state_snapshot_ref": "pp://project-alpha/state_snapshots/2026-01-13T19:30Z.json",
+    "evidence_refs": [
+      "pp://project-alpha/docs/cost_estimate_v1.pdf"
+    ]
+  },
+  "constraints_in_force": {
+    "scope_profile_id": "scope-v0",
+    "constraint_profile_id": "constraints-v0",
+    "export_class": "C1",
+    "energy_cap_ref": "energy_budget.json#2026-01"
+  },
+  "owner": {
+    "decision_owner_type": "committee",
+    "approver_ref": "approver:ops-lead"
+  },
+  "privacy": {
+    "contains_personal_data": false,
+    "contains_sensitive_trade_info": false
+  },
+  "integrity": {
+    "witness_id": "optional-wit-id",
+    "hash_commitment": "optional"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CDM Record v0.1",
+  "type": "object",
+  "required": [
+    "cdm_v",
+    "record_type",
+    "record_id",
+    "time_utc",
+    "entity",
+    "project",
+    "privacy"
+  ],
+  "properties": {
+    "cdm_v": {
+      "const": "0.1"
+    },
+    "record_type": {
+      "enum": [
+        "decision",
+        "outcome",
+        "assumption",
+        "constraint"
+      ]
+    },
+    "record_id": {
+      "type": "string"
+    },
+    "time_utc": {
+      "type": "string"
+    },
+    "entity": {
+      "type": "object",
+      "required": [
+        "entity_id",
+        "market_domain_code"
+      ],
+      "properties": {
+        "entity_id": {
+          "type": "string"
+        },
+        "market_domain_code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "project": {
+      "type": "object",
+      "required": [
+        "project_id",
+        "partition_id"
+      ],
+      "properties": {
+        "project_id": {
+          "type": "string"
+        },
+        "partition_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object"
+    },
+    "context_refs": {
+      "type": "object"
+    },
+    "constraints_in_force": {
+      "type": "object"
+    },
+    "owner": {
+      "type": "object"
+    },
+    "privacy": {
+      "type": "object",
+      "required": [
+        "contains_personal_data",
+        "contains_sensitive_trade_info"
+      ],
+      "properties": {
+        "contains_personal_data": {
+          "type": "boolean"
+        },
+        "contains_sensitive_trade_info": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "integrity": {
+      "type": "object"
+    },
+    "supersedes_record_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "decision_record_id": {
+          "type": "string"
+        },
+        "related_record_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "outcome": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

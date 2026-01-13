@@ -1,0 +1,34 @@
+{
+  "cdm_v": "0.1",
+  "record_type": "outcome",
+  "record_id": "sample-outcome-001",
+  "time_utc": "2026-02-01T12:00:00Z",
+  "entity": {
+    "entity_id": "sample-entity",
+    "market_domain_code": "sample.domain"
+  },
+  "project": {
+    "project_id": "sample-project",
+    "partition_id": "pp-sample"
+  },
+  "links": {
+    "decision_record_id": "sample-decision-001"
+  },
+  "outcome": {
+    "status": "positive",
+    "summary": "DB growth reduced while query latency improved.",
+    "observed_metrics": [
+      {
+        "name": "db_growth_gb_month",
+        "value": 8,
+        "unit": "GB",
+        "time_window": "2026-01"
+      }
+    ],
+    "evidence_refs": []
+  },
+  "privacy": {
+    "contains_personal_data": false,
+    "contains_sensitive_trade_info": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "cdm_v": "0.1",
+  "record_type": "outcome",
+  "record_id": "example-outcome-001",
+  "time_utc": "2026-01-27T20:00:00Z",
+  "entity": {
+    "entity_id": "example-entity",
+    "market_domain_code": "example.domain"
+  },
+  "project": {
+    "project_id": "project-alpha",
+    "partition_id": "pp-alpha"
+  },
+  "links": {
+    "decision_record_id": "example-decision-002",
+    "related_record_ids": [
+      "example-decision-001"
+    ]
+  },
+  "outcome": {
+    "status": "positive",
+    "summary": "Reporting needs met; DB growth remained stable due to rollups-only policy.",
+    "observed_metrics": [
+      {
+        "name": "db_growth_gb_month",
+        "value": 10,
+        "unit": "GB",
+        "time_window": "2026-01"
+      },
+      {
+        "name": "staleness_rate",
+        "value": 0.04,
+        "unit": "ratio",
+        "time_window": "2026-01"
+      }
+    ],
+    "evidence_refs": [
+      "pp://project-alpha/reports/db_footprint_scorecard_2026-01.json"
+    ]
+  },
+  "privacy": {
+    "contains_personal_data": false,
+    "contains_sensitive_trade_info": false
+  }
+}
